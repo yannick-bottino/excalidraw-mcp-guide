@@ -2,7 +2,7 @@
   "servers": {
     "excalidraw-canvas": {
       "type": "http",
-      "url": "https://mcp-excalidraw.srv990361.hstgr.cloud/mcp"
+      "url": "https://mcp-excalidraw.<votre-domaine-vps>/mcp"
     }
   }
 }

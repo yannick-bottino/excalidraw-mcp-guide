@@ -34,7 +34,7 @@ Un canvas Excalidraw collaboratif heberge sur un VPS, pilotable par l'IA via le 
 
 ### Lien direct
 
-> **https://excalidraw.srv990361.hstgr.cloud**
+> **https://excalidraw.<votre-domaine-vps>**
 
 C'est tout. Ouvre ce lien dans ton navigateur et tu verras le canvas Excalidraw en temps reel.
 
@@ -62,7 +62,7 @@ Tu auras maintenant une icone Excalidraw sur ton bureau et dans ta barre des tac
 Ouvre cette URL dans ton navigateur :
 
 ```
-https://excalidraw.srv990361.hstgr.cloud/health
+https://excalidraw.<votre-domaine-vps>/health
 ```
 
 Tu devrais voir quelque chose comme :
@@ -99,7 +99,7 @@ Le MCP (Model Context Protocol) permet a un assistant IA de controler le canvas 
 2. Clique sur **"Add custom connector"** (ou "Ajouter un connecteur personnalise")
 3. Remplis les champs :
    - **Name** : `Excalidraw Canvas`
-   - **URL** : `https://mcp-excalidraw.srv990361.hstgr.cloud/mcp`
+   - **URL** : `https://mcp-excalidraw.<votre-domaine-vps>/mcp`
 4. Laisse les champs OAuth **vides** (pas d'authentification)
 5. Clique **"Add"**
 6. Demarre une nouvelle conversation et teste :
@@ -115,7 +115,7 @@ Le MCP (Model Context Protocol) permet a un assistant IA de controler le canvas 
 Ouvre ton terminal et tape :
 
 ```bash
-claude mcp add --transport http excalidraw-canvas https://mcp-excalidraw.srv990361.hstgr.cloud/mcp
+claude mcp add --transport http excalidraw-canvas https://mcp-excalidraw.<votre-domaine-vps>/mcp
 ```
 
 C'est tout ! Verifie avec :
@@ -145,7 +145,7 @@ Cree un fichier `.mcp.json` a la racine de ton projet :
   "mcpServers": {
     "excalidraw-canvas": {
       "type": "http",
-      "url": "https://mcp-excalidraw.srv990361.hstgr.cloud/mcp"
+      "url": "https://mcp-excalidraw.<votre-domaine-vps>/mcp"
     }
   }
 }
@@ -160,7 +160,7 @@ Cree un fichier `.mcp.json` a la racine de ton projet :
 1. Ouvre Claude Desktop
 2. Va dans **Settings** (icone engrenage) > **Connectors**
 3. Clique **"Add custom connector"**
-4. Entre l'URL : `https://mcp-excalidraw.srv990361.hstgr.cloud/mcp`
+4. Entre l'URL : `https://mcp-excalidraw.<votre-domaine-vps>/mcp`
 5. Laisse les champs OAuth vides
 6. Clique **"Add"**
 
@@ -183,7 +183,7 @@ Si tu ne vois pas le menu Connectors, utilise la methode par fichier de configur
       "command": "npx",
       "args": [
         "mcp-remote@latest",
-        "https://mcp-excalidraw.srv990361.hstgr.cloud/mcp"
+        "https://mcp-excalidraw.<votre-domaine-vps>/mcp"
       ]
     }
   }
@@ -207,7 +207,7 @@ Si tu ne vois pas le menu Connectors, utilise la methode par fichier de configur
 4. Remplis :
    - **Name** : `excalidraw-canvas`
    - **Type** : `http` ou `streamable-http`
-   - **URL** : `https://mcp-excalidraw.srv990361.hstgr.cloud/mcp`
+   - **URL** : `https://mcp-excalidraw.<votre-domaine-vps>/mcp`
 
 #### Alternative : configuration par fichier
 
@@ -220,7 +220,7 @@ Cree ou modifie le fichier `~/.cursor/mcp.json` :
 {
   "mcpServers": {
     "excalidraw-canvas": {
-      "url": "https://mcp-excalidraw.srv990361.hstgr.cloud/mcp"
+      "url": "https://mcp-excalidraw.<votre-domaine-vps>/mcp"
     }
   }
 }
@@ -243,7 +243,7 @@ Modifie le fichier `mcp_config.json` de Windsurf :
 {
   "mcpServers": {
     "excalidraw-canvas": {
-      "serverUrl": "https://mcp-excalidraw.srv990361.hstgr.cloud/mcp"
+      "serverUrl": "https://mcp-excalidraw.<votre-domaine-vps>/mcp"
     }
   }
 }
@@ -266,7 +266,7 @@ Cree un fichier `.vscode/mcp.json` a la racine de ton projet :
   "servers": {
     "excalidraw-canvas": {
       "type": "http",
-      "url": "https://mcp-excalidraw.srv990361.hstgr.cloud/mcp"
+      "url": "https://mcp-excalidraw.<votre-domaine-vps>/mcp"
     }
   }
 }
@@ -286,7 +286,7 @@ Va dans **Settings** > **Tools** > **AI Assistant** > **MCP Servers** > **Add** 
 {
   "mcpServers": {
     "excalidraw-canvas": {
-      "url": "https://mcp-excalidraw.srv990361.hstgr.cloud/mcp"
+      "url": "https://mcp-excalidraw.<votre-domaine-vps>/mcp"
     }
   }
 }
@@ -300,7 +300,7 @@ Si ton client MCP supporte le transport **Streamable HTTP**, utilise simplement 
 
 | Parametre | Valeur |
 |-----------|--------|
-| **URL** | `https://mcp-excalidraw.srv990361.hstgr.cloud/mcp` |
+| **URL** | `https://mcp-excalidraw.<votre-domaine-vps>/mcp` |
 | **Transport** | Streamable HTTP |
 | **Authentification** | Aucune |
 
@@ -313,7 +313,7 @@ Si ton client ne supporte **que le transport stdio**, utilise le bridge `mcp-rem
       "command": "npx",
       "args": [
         "mcp-remote@latest",
-        "https://mcp-excalidraw.srv990361.hstgr.cloud/mcp"
+        "https://mcp-excalidraw.<votre-domaine-vps>/mcp"
       ]
     }
   }
@@ -375,7 +375,7 @@ Il est donc essentiel de mettre en place un systeme de sauvegarde.
 Le canvas affiche un bouton d'export. Tu peux aussi aller sur :
 
 ```
-https://excalidraw.srv990361.hstgr.cloud/api/elements
+https://excalidraw.<votre-domaine-vps>/api/elements
 ```
 
 Cela retourne un JSON avec tous les elements du canvas. Copie-le et sauvegarde-le dans un fichier.
@@ -436,7 +436,7 @@ Le script sauvegarde les elements du canvas dans un fichier JSON horodate et le 
 
 Si tu as **n8n** installe sur ton VPS (c'est le cas ici), tu peux creer un workflow visuel :
 
-1. Ouvre n8n : **https://n8n.srv990361.hstgr.cloud**
+1. Ouvre n8n : **https://n8n.<votre-domaine-vps>**
 2. Cree un nouveau workflow
 3. Ajoute ces noeuds :
 
@@ -513,7 +513,7 @@ Le serveur MCP Excalidraw met a disposition **26 outils** que l'IA peut utiliser
 
 ### Le canvas n'affiche rien / erreur de connexion
 
-1. Verifie que le serveur tourne : ouvre https://excalidraw.srv990361.hstgr.cloud/health
+1. Verifie que le serveur tourne : ouvre https://excalidraw.<votre-domaine-vps>/health
 2. Si ca ne repond pas, le VPS est peut-etre eteint ou les containers stoppes
 3. Connecte-toi au VPS et redemarre :
    ```bash
@@ -531,7 +531,7 @@ Le serveur MCP Excalidraw met a disposition **26 outils** que l'IA peut utiliser
 
 1. Verifie que le MCP gateway tourne :
    ```
-   https://mcp-excalidraw.srv990361.hstgr.cloud/mcp
+   https://mcp-excalidraw.<votre-domaine-vps>/mcp
    ```
    (une erreur 400 en GET est **normale** — le serveur attend du POST)
 2. Si timeout : les containers sont probablement arretes sur le VPS
@@ -557,7 +557,7 @@ TON NAVIGATEUR                           VPS HOSTINGER
 +---------------------------+            +--------------------------------------+
 |                           |            |                                      |
 | https://excalidraw.       |  HTTPS     | Traefik (reverse proxy + SSL auto)   |
-|   srv990361.hstgr.cloud   |----------->|   |                                  |
+|   <votre-domaine-vps>   |----------->|   |                                  |
 |                           |            |   +--> Canvas Server (:3000)          |
 +---------------------------+            |   |    Excalidraw UI + REST API + WS  |
                                          |   |                                  |
@@ -581,11 +581,11 @@ TON ASSISTANT IA                         |   +--> MCP Gateway (:8001)           
 
 | Service | URL |
 |---------|-----|
-| Canvas (navigateur) | https://excalidraw.srv990361.hstgr.cloud |
-| MCP endpoint (IA) | https://mcp-excalidraw.srv990361.hstgr.cloud/mcp |
-| Health check | https://excalidraw.srv990361.hstgr.cloud/health |
-| API Elements | https://excalidraw.srv990361.hstgr.cloud/api/elements |
-| API Snapshots | https://excalidraw.srv990361.hstgr.cloud/api/snapshots |
+| Canvas (navigateur) | https://excalidraw.<votre-domaine-vps> |
+| MCP endpoint (IA) | https://mcp-excalidraw.<votre-domaine-vps>/mcp |
+| Health check | https://excalidraw.<votre-domaine-vps>/health |
+| API Elements | https://excalidraw.<votre-domaine-vps>/api/elements |
+| API Snapshots | https://excalidraw.<votre-domaine-vps>/api/snapshots |
 
 ---
 

@@ -4,7 +4,7 @@
       "command": "npx",
       "args": [
         "mcp-remote@latest",
-        "https://mcp-excalidraw.srv990361.hstgr.cloud/mcp"
+        "https://mcp-excalidraw.<votre-domaine-vps>/mcp"
       ]
     }
   }
