@@ -408,10 +408,10 @@ Le script `backup/backup-canvas.sh` de ce repo sauvegarde automatiquement le can
 
 ```bash
 # 1. Copie le script sur le VPS
-scp backup/backup-canvas.sh root@srv990361.hstgr.cloud:/opt/excalidraw-mcp/
+scp backup/backup-canvas.sh root@<adresse-ip-de-votre-vps>:/opt/excalidraw-mcp/
 
 # 2. Connecte-toi au VPS
-ssh root@srv990361.hstgr.cloud
+ssh root@<adresse-ip-de-votre-vps>
 
 # 3. Rends le script executable
 chmod +x /opt/excalidraw-mcp/backup-canvas.sh
@@ -517,7 +517,7 @@ Le serveur MCP Excalidraw met a disposition **26 outils** que l'IA peut utiliser
 2. Si ca ne repond pas, le VPS est peut-etre eteint ou les containers stoppes
 3. Connecte-toi au VPS et redemarre :
    ```bash
-   ssh root@srv990361.hstgr.cloud
+   ssh root@<adresse-ip-de-votre-vps>
    cd /opt/excalidraw-mcp && docker compose up -d
    ```
 
